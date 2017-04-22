@@ -101,7 +101,7 @@ numberOfRowsInComponent:(__unused NSInteger)component
   if (_onChange) {
     _onChange(@{
       @"newIndex": @(row),
-      @"newValue": RCTNullIfNil(_items[row][@"value"]),
+      @"newValue": RCTNullIfNil(_items.count > row? _items[row][@"value"] : nil),
     });
   }
 }
